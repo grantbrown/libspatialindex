@@ -27,6 +27,7 @@
 
 #include <spatialindex/SpatialIndex.h>
 #include "DiskStorageManager.h"
+#include <spatialindex/tools/Tools.h>
 
 using namespace SpatialIndex;
 using namespace SpatialIndex::StorageManager;
@@ -273,8 +274,6 @@ DiskStorageManager::~DiskStorageManager()
 
 void DiskStorageManager::flush()
 {
-	Tools::LockGuard guard(m_lock);
-
 	m_indexFile.seekp(0, std::ios_base::beg);
 	if (m_indexFile.fail())
 		throw Tools::IllegalStateException("SpatialIndex::DiskStorageManager: Corrupted storage manager index file.");
@@ -333,8 +332,6 @@ void DiskStorageManager::flush()
 
 void DiskStorageManager::loadByteArray(const id_type page, uint32_t& len, byte** data)
 {
-	Tools::LockGuard guard(m_lock);
-
 	std::map<id_type, Entry*>::iterator it = m_pageIndex.find(page);
 
 	if (it == m_pageIndex.end())
@@ -373,8 +370,6 @@ void DiskStorageManager::loadByteArray(const id_type page, uint32_t& len, byte**
 
 void DiskStorageManager::storeByteArray(id_type& page, const uint32_t len, const byte* const data)
 {
-	Tools::LockGuard guard(m_lock);
-
 	if (page == NewPage)
 	{
 		Entry* e = new Entry();
@@ -485,8 +480,6 @@ void DiskStorageManager::storeByteArray(id_type& page, const uint32_t len, const
 
 void DiskStorageManager::deleteByteArray(const id_type page)
 {
-	Tools::LockGuard guard(m_lock);
-
 	std::map<id_type, Entry*>::iterator it = m_pageIndex.find(page);
 
 	if (it == m_pageIndex.end())
