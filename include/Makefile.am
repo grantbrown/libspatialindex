@@ -4,6 +4,7 @@ nobase_spatialindex_HEADERS =			spatialindex/SpatialIndex.h \
 								spatialindex/RTree.h \
 								spatialindex/MVRTree.h \
 								spatialindex/TPRTree.h \
+								spatialindex/Flann.h \
 								spatialindex/Point.h \
 								spatialindex/Region.h \
 								spatialindex/LineSegment.h \

@@ -245,6 +245,7 @@ namespace SpatialIndex
 #include "MovingRegion.h"
 #include "RTree.h"
 #include "MVRTree.h"
+#include "Flann.h"
 #include "TPRTree.h"
 #include "Version.h"
 

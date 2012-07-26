@@ -74,24 +74,6 @@ namespace SpatialIndex
 			FlannVariant rv,
 			id_type& indexIdentifier
 		);
-		SIDX_DLL ISpatialIndex* createAndBulkLoadNewFlann(
-			BulkLoadMethod m,
-			IDataStream& stream,
-			IStorageManager& sm,
-			double fillFactor,
-			uint32_t indexCapacity,
-			uint32_t leafCapacity,
-			uint32_t dimension,
-			FlannVariant rv,
-			id_type& indexIdentifier
-		);
-		SIDX_DLL ISpatialIndex* createAndBulkLoadNewFlann(
-			BulkLoadMethod m,
-			IDataStream& stream,
-			IStorageManager& sm,
-			Tools::PropertySet& ps,
-			id_type& indexIdentifier
-		);
 		SIDX_DLL ISpatialIndex* loadFlann(IStorageManager& in, id_type indexIdentifier);
 	}
 }

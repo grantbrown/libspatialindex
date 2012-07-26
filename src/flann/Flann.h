@@ -98,7 +98,7 @@ namespace SpatialIndex
 			std::vector<RootEntry> m_roots;
 			id_type m_headerID;
 
-			FlannVariant m_treeVariant;
+            FlannVariant m_treeVariant;
 
 			double m_fillFactor;
 
