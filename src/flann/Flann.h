@@ -90,8 +90,6 @@ namespace SpatialIndex
 			NodePtr readNode(id_type id);
 			void deleteNode(Node* n);
 
-			void rangeQuery(RangeQueryType type, const IShape& query, IVisitor& v);
-
 			void findRootIdentifiers(const Tools::IInterval& ti, std::vector<id_type>& ids);
 			std::string printRootInfo() const;
 

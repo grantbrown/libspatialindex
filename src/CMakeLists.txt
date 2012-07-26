@@ -121,7 +121,7 @@ list (APPEND SIDX_CPP ${SIDX_RTREE_CPP})
 set(SIDX_FLANN_CPP
   #${SIDX_SRC_DIR}/flann/BulkLoader.cc
   #${SIDX_SRC_DIR}/flann/BulkLoader.h
-  #${SIDX_SRC_DIR}/flann/Index.cc
+  ${SIDX_SRC_DIR}/flann/Index.cc
   ${SIDX_SRC_DIR}/flann/Index.h
   #${SIDX_SRC_DIR}/flann/Leaf.cc
   ${SIDX_SRC_DIR}/flann/Leaf.h

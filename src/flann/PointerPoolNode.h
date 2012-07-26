@@ -43,7 +43,7 @@ namespace Tools
 
 			while (! m_pool.empty())
 			{
-				SpatialIndex::MVRTree::Node* x = m_pool.top(); m_pool.pop();
+				SpatialIndex::Flann::Node* x = m_pool.top(); m_pool.pop();
 				#ifndef NDEBUG
 				--m_pointerCount;
 				#endif
@@ -78,7 +78,7 @@ namespace Tools
 			return PoolPointer<SpatialIndex::Flann::Node>();
 		}
 
-		void release(SpatialIndex::MVRTree::Node* p)
+		void release(SpatialIndex::Flann::Node* p)
 		{
 			if (p != 0)
 			{

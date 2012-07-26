@@ -175,7 +175,7 @@ namespace SpatialIndex
 
 			// Needed to access protected members without having to cast from Node.
 			// It is more efficient than using member functions to access protected members.
-			friend class MVRTree;
+			friend class Flann;
 			friend class Leaf;
 			friend class Index;
 			friend class Tools::PointerPool<Node>;
