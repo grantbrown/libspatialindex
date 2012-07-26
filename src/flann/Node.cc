@@ -29,6 +29,7 @@
 #include "Node.h"
 #include "Index.h"
 #include "Leaf.h"
+#include "flann/flann.h"
 
 using namespace SpatialIndex;
 using namespace SpatialIndex::Flann;

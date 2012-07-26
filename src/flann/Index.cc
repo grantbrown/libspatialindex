@@ -3,6 +3,7 @@
 #include "Node.h"
 #include "Leaf.h"
 #include "Index.h"
+#include "flann/flann.h"
 
 
 using namespace SpatialIndex;
