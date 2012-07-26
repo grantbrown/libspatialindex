@@ -21,7 +21,6 @@ NodePtr Index::chooseSubtree(const TimeRegion& mbr, uint32_t insertionLevel, std
 
 }
 
-
 NodePtr Index::findLeaf(const TimeRegion& mbr, id_type id, std::stack<id_type>& pathBuffer)
 {
 }

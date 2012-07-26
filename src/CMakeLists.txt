@@ -125,7 +125,7 @@ set(SIDX_FLANN_CPP
   ${SIDX_SRC_DIR}/flann/Index.h
   #${SIDX_SRC_DIR}/flann/Leaf.cc
   ${SIDX_SRC_DIR}/flann/Leaf.h
-  #${SIDX_SRC_DIR}/flann/Node.cc
+  ${SIDX_SRC_DIR}/flann/Node.cc
   ${SIDX_SRC_DIR}/flann/Node.h
   ${SIDX_SRC_DIR}/flann/PointerPoolNode.h
   #${SIDX_SRC_DIR}/flann/Flann.cc

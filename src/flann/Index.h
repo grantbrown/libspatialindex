@@ -43,7 +43,7 @@ namespace SpatialIndex
 			uint32_t findLeastEnlargement(const TimeRegion&) const;
 			uint32_t findLeastOverlap(const TimeRegion&) const;
 
-			void adjustTree(Node*, std::stack<id_type>&);
+			void adjustTree(Node*, std::stack<id_type>& pathBuffer);
 			void adjustTree(Node* n, Node* nn, std::stack<id_type>& pathBuffer);
 
 			class OverlapEntry
