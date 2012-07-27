@@ -23,9 +23,9 @@
 
 namespace SpatialIndex
 {
-	namespace Flann
+	namespace FlannTree
 	{
-		SIDX_DLL enum FlannVariant
+		SIDX_DLL enum FlannTreeVariant
 		{
 			RV_LINEAR = 0x0,
 			RV_QUADRATIC,
@@ -64,16 +64,16 @@ namespace SpatialIndex
 			uint32_t m_dataLength;
 		}; // Data
 
-		SIDX_DLL ISpatialIndex* returnFlann(IStorageManager& ind, Tools::PropertySet& in);
-		SIDX_DLL ISpatialIndex* createNewFlann(
+		SIDX_DLL ISpatialIndex* returnFlannTree(IStorageManager& ind, Tools::PropertySet& in);
+		SIDX_DLL ISpatialIndex* createNewFlannTree(
 			IStorageManager& sm,
 			double fillFactor,
 			uint32_t indexCapacity,
 			uint32_t leafCapacity,
 			uint32_t dimension,
-			FlannVariant rv,
+			FlannTreeVariant rv,
 			id_type& indexIdentifier
 		);
-		SIDX_DLL ISpatialIndex* loadFlann(IStorageManager& in, id_type indexIdentifier);
+		SIDX_DLL ISpatialIndex* loadFlannTree(IStorageManager& in, id_type indexIdentifier);
 	}
 }

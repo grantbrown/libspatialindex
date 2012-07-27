@@ -23,7 +23,7 @@
 
 namespace SpatialIndex
 {
-	namespace Flann
+	namespace FlannTree
 	{
 		class Index : public Node
 		{
@@ -31,7 +31,7 @@ namespace SpatialIndex
 			virtual ~Index();
 
 		private:
-			Index(Flann* pTree, id_type id, uint32_t level);
+			Index(FlannTree* pTree, id_type id, uint32_t level);
 
 			virtual NodePtr chooseSubtree(const TimeRegion& mbr, uint32_t level, std::stack<id_type>& pathBuffer);
 			virtual NodePtr findLeaf(const TimeRegion& mbr, id_type id, std::stack<id_type>& pathBuffer);
@@ -67,7 +67,7 @@ namespace SpatialIndex
 				}
 			}; // OverlapEntry
 
-			friend class Flann;
+			friend class FlannTree;
 			friend class Node;
 		}; // Index
 	}

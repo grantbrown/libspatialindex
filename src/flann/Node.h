@@ -23,9 +23,9 @@
 
 namespace SpatialIndex
 {
-	namespace Flann
+	namespace FlannTree
 	{
-		class Flann;
+		class FlannTree;
 		class Leaf;
 		class Index;
 		class Node;
@@ -68,7 +68,7 @@ namespace SpatialIndex
 
 		private:
 			Node();
-			Node(Flann* pTree, id_type id, uint32_t level, uint32_t capacity);
+			Node(FlannTree* pTree, id_type id, uint32_t level, uint32_t capacity);
 
 			virtual Node& operator=(const Node&);
 
@@ -99,7 +99,7 @@ namespace SpatialIndex
 				uint32_t dataLength, byte* pData, TimeRegion& mbr, id_type id, NodePtr& left, NodePtr& right,
 				TimeRegion& mbr2, id_type id2, bool bInsertMbr2 = false) = 0;
 
-			Flann* m_pTree;
+			FlannTree* m_pTree;
 				// Parent of all nodes.
 
 			uint32_t m_level;
@@ -175,7 +175,7 @@ namespace SpatialIndex
 
 			// Needed to access protected members without having to cast from Node.
 			// It is more efficient than using member functions to access protected members.
-			friend class Flann;
+			friend class FlannTree;
 			friend class Leaf;
 			friend class Index;
 			friend class Tools::PointerPool<Node>;

@@ -25,7 +25,7 @@
 
 namespace Tools
 {
-	template<> class PointerPool<SpatialIndex::Flann::Node>
+	template<> class PointerPool<SpatialIndex::FlannTree::Node>
 	{
 	public:
 		explicit PointerPool(uint32_t capacity) : m_capacity(capacity)
@@ -43,7 +43,7 @@ namespace Tools
 
 			while (! m_pool.empty())
 			{
-				SpatialIndex::Flann::Node* x = m_pool.top(); m_pool.pop();
+				SpatialIndex::FlannTree::Node* x = m_pool.top(); m_pool.pop();
 				#ifndef NDEBUG
 				--m_pointerCount;
 				#endif
@@ -55,16 +55,16 @@ namespace Tools
 			#endif
 		}
 
-		PoolPointer<SpatialIndex::Flann::Node> acquire()
+		PoolPointer<SpatialIndex::FlannTree::Node> acquire()
 		{
 			if (! m_pool.empty())
 			{
-				SpatialIndex::Flann::Node* p = m_pool.top(); m_pool.pop();
+				SpatialIndex::FlannTree::Node* p = m_pool.top(); m_pool.pop();
 				#ifndef NDEBUG
 				++m_hits;
 				#endif
 
-				return PoolPointer<SpatialIndex::Flann::Node>(p, this);
+				return PoolPointer<SpatialIndex::FlannTree::Node>(p, this);
 			}
 			#ifndef NDEBUG
 			else
@@ -75,10 +75,10 @@ namespace Tools
 			}
 			#endif
 
-			return PoolPointer<SpatialIndex::Flann::Node>();
+			return PoolPointer<SpatialIndex::FlannTree::Node>();
 		}
 
-		void release(SpatialIndex::Flann::Node* p)
+		void release(SpatialIndex::FlannTree::Node* p)
 		{
 			if (p != 0)
 			{
@@ -120,7 +120,7 @@ namespace Tools
 
 	protected:
 		uint32_t m_capacity;
-		std::stack<SpatialIndex::Flann::Node*> m_pool;
+		std::stack<SpatialIndex::FlannTree::Node*> m_pool;
 
 	#ifndef NDEBUG
 	public:

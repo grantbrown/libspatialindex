@@ -23,9 +23,9 @@
 
 namespace SpatialIndex
 {
-	namespace Flann
+	namespace FlannTree
 	{
-		class Flann;
+		class FlannTree;
 		class Node;
 		class Leaf;
 		class Index;
@@ -85,7 +85,7 @@ namespace SpatialIndex
 
 			std::vector<uint32_t> m_nodesInLevel;
 
-			friend class Flann;
+			friend class FlannTree;
 			friend class Node;
 			friend class Index;
 			friend class Leaf;

@@ -1,19 +1,19 @@
 #include <spatialindex/SpatialIndex.h>
-#include "Flann.h"
+#include "FlannTree.h"
 #include "Node.h"
 #include "Leaf.h"
 #include "Index.h"
-#include "flann/flann.h"
+#include <flann/flann.h>
 
 
 using namespace SpatialIndex;
-using namespace SpatialIndex::Flann;
+using namespace SpatialIndex::FlannTree;
 
 Index::~Index()
 {
 }
 
-Index::Index(SpatialIndex::Flann::Flann* pTree, id_type id, uint32_t level) : Node(pTree, id, level, pTree->m_indexCapacity)
+Index::Index(SpatialIndex::FlannTree::FlannTree* pTree, id_type id, uint32_t level) : Node(pTree, id, level, pTree->m_indexCapacity)
 {
 }
 

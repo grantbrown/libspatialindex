@@ -25,14 +25,14 @@
 
 #include <spatialindex/SpatialIndex.h>
 
-#include "Flann.h"
+#include <Flann.h>
 #include "Node.h"
 #include "Index.h"
 #include "Leaf.h"
 #include "flann/flann.h"
 
 using namespace SpatialIndex;
-using namespace SpatialIndex::Flann;
+using namespace SpatialIndex::FlannTree;
 
 //
 // Tools::IObject interface
@@ -127,7 +127,7 @@ Node::Node() :
 
 }
 
-Node::Node (SpatialIndex::Flann::Flann* pTree, id_type id, uint32_t level, uint32_t capacity) :
+Node::Node (SpatialIndex::FlannTree::FlannTree* pTree, id_type id, uint32_t level, uint32_t capacity) :
     m_pTree(pTree),
 	m_level(level),
 	m_identifier(id),

@@ -23,7 +23,7 @@
 
 namespace SpatialIndex
 {
-	namespace Flann
+	namespace FlannTree
 	{
 		class Leaf : public Node
 		{
@@ -31,7 +31,7 @@ namespace SpatialIndex
 			virtual ~Leaf();
 
 		private:
-			Leaf(Flann* pTree, id_type id);
+			Leaf(FlannTree* pTree, id_type id);
 
 			virtual NodePtr chooseSubtree(const TimeRegion& mbr, uint32_t level, std::stack<id_type>& pathBuffer);
 			virtual NodePtr findLeaf(const TimeRegion& mbr, id_type id, std::stack<id_type>& pathBuffer);
@@ -40,7 +40,7 @@ namespace SpatialIndex
 				uint32_t dataLength, byte* pData, TimeRegion& mbr, id_type id, NodePtr& left, NodePtr& right,
 				TimeRegion& mbr2, id_type id2, bool bInsertMbr2 = false);
 
-			friend class Flann;
+			friend class FlannTree;
 			friend class Node;
 		}; // Leaf
 	}

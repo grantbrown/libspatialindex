@@ -27,15 +27,15 @@
 
 namespace SpatialIndex
 {
-	namespace Flann
+	namespace FlannTree
 	{
-		class Flann : public ISpatialIndex
+		class FlannTree : public ISpatialIndex
 		{
 			class NNEntry;
 			class RootEntry;
 
 		public:
-			Flann(IStorageManager&, Tools::PropertySet&);
+			FlannTree(IStorageManager&, Tools::PropertySet&);
 				// String                   Value     Description
 				// ----------------------------------------------
 				// IndexIndentifier         VT_LONG   If specified an existing index will be openened from the supplied
@@ -57,7 +57,7 @@ namespace SpatialIndex
 
 
 
-			virtual ~Flann();
+			virtual ~FlannTree();
 
 			//
 			// ISpatialIndex interface
@@ -98,7 +98,7 @@ namespace SpatialIndex
 			std::vector<RootEntry> m_roots;
 			id_type m_headerID;
 
-            FlannVariant m_treeVariant;
+            FlannTreeVariant m_treeVariant;
 
 			double m_fillFactor;
 
@@ -126,7 +126,7 @@ namespace SpatialIndex
 
 			Region m_infiniteRegion;
 
-			SpatialIndex::Flann::Statistics m_stats;
+			SpatialIndex::FlannTree::Statistics m_stats;
 
 			bool m_bTightMBRs;
 
@@ -192,10 +192,10 @@ namespace SpatialIndex
 			friend class Leaf;
 			friend class Index;
 
-			friend std::ostream& operator<<(std::ostream& os, const Flann& t);
+			friend std::ostream& operator<<(std::ostream& os, const FlannTree& t);
 		}; // MVRTree
 
-		std::ostream& operator<<(std::ostream& os, const Flann& t);
+		std::ostream& operator<<(std::ostream& os, const FlannTree& t);
 	}
 }
 

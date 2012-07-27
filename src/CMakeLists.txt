@@ -27,7 +27,7 @@ set(SIDX_CAPI_DIR ${PROJECT_SOURCE_DIR}/src/capi)
 # base
 #
 set(SIDX_BASE_HPP
-  ${SIDX_HEADERS_DIR}/Flann.h
+  ${SIDX_HEADERS_DIR}/FlannTree.h
   ${SIDX_HEADERS_DIR}/LineSegment.h
   ${SIDX_HEADERS_DIR}/MovingPoint.h
   ${SIDX_HEADERS_DIR}/MVRTree.h
@@ -128,8 +128,8 @@ set(SIDX_FLANN_CPP
   ${SIDX_SRC_DIR}/flann/Node.cc
   ${SIDX_SRC_DIR}/flann/Node.h
   ${SIDX_SRC_DIR}/flann/PointerPoolNode.h
-  #${SIDX_SRC_DIR}/flann/Flann.cc
-  ${SIDX_SRC_DIR}/flann/Flann.h
+  #${SIDX_SRC_DIR}/flann/FlannTree.cc
+  ${SIDX_SRC_DIR}/flann/FlannTree.h
   #${SIDX_SRC_DIR}/flann/Statistics.cc
   ${SIDX_SRC_DIR}/flann/Statistics.h
 )
